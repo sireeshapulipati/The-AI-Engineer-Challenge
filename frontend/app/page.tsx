@@ -73,7 +73,7 @@ export default function Home() {
             {messages.length === 0 && (
               <div className={styles.welcomeMessage}>
                 <div className={styles.welcomeIcon}>💬</div>
-                <p>Welcome! I'm here to support you. What's on your mind today?</p>
+                <p>Welcome! I&apos;m here to support you. What&apos;s on your mind today?</p>
               </div>
             )}
             
