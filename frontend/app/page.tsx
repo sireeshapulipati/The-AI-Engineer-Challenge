@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { sendMessage } from '../lib/api';
 import styles from './page.module.css';
 
@@ -85,7 +86,11 @@ export default function Home() {
                 }`}
               >
                 <div className={styles.messageContent}>
-                  {message.content}
+                  {message.role === 'assistant' ? (
+                    <ReactMarkdown>{message.content}</ReactMarkdown>
+                  ) : (
+                    message.content
+                  )}
                 </div>
                 <div className={styles.messageTime}>
                   {message.timestamp.toLocaleTimeString([], {
